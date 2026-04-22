@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bancred — Empréstimo online via PIX</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="keywords" content="emprestimo, fácil, nome sujo, pix">
+  <meta name="author" content="Bancred">
+  <meta name="description" content="Empréstimo online via PIX. Mesmo com nome sujo ou score baixo.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      border: 0 solid;
+    }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100dvh;
+      background: #F4F4F7;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    main, section, nav {
+      -webkit-overflow-scrolling: touch;
+    }
+    .app-fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes progressAnim {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    .progress-bar {
+      background: #16A34A;
+      height: 4px;
+      width: 0%;
+      border-radius: 999px;
+      transition: width 5s linear;
+    }
+  </style>
+</head>
+<body>
+<div class="app-fade-in" style="min-height:100dvh;background:#F4F4F7;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#111827;-webkit-font-smoothing:antialiased">
+
+  <!-- Header -->
+  <header style="background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #E5E7EB;padding:14px 16px;text-align:center;position:sticky;top:0;z-index:40">
+    <div style="height:76px;display:inline-flex;align-items:center;justify-content:center;gap:10px">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+        <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+        <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span style="font-size:26px;font-weight:800;color:#1C68E3;letter-spacing:-1px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Bancred</span>
+    </div>
+  </header>
+
+  <main style="padding-bottom:40px">
+
+    <!-- Hero Section -->
+    <section style="padding:32px 20px 24px;text-align:center;max-width:560px;margin:0 auto">
+      <h1 style="font-size:30px;font-weight:800;line-height:1.15;color:#111827;margin-bottom:16px;letter-spacing:-0.8px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+        Empréstimo online,<br>receba hoje via <span style="color:#1C68E3">PIX</span>!
+      </h1>
+      <p style="font-size:16px;color:#6B7280;margin-bottom:10px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5">
+        Mesmo com <span style="background:#FFEDD5;color:#111827;font-weight:700;padding:2px 6px;border-radius:6px">nome sujo</span> ou <span style="background:#FFEDD5;color:#111827;font-weight:700;padding:2px 6px;border-radius:6px">score baixo</span>
+      </p>
+      <p style="color:#16A34A;font-weight:600;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;font-size:14px">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+        Simule sem compromisso
+      </p>
+      <div style="display:flex;justify-content:center;margin-bottom:22px">
+        <button type="button" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:16px 22px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(28,104,227,0.28);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;letter-spacing:-0.2px;min-height:54px;opacity:1">
+          Começar Simulação
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;font-size:13px;color:#6B7280;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+        <span style="display:inline-flex;align-items:center;gap:6px">
+          <span style="width:8px;height:8px;border-radius:50%;background:#16A34A;display:inline-block"></span>
+          100% Digital
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:6px">
+          <span style="width:8px;height:8px;border-radius:50%;background:#1C68E3;display:inline-block"></span>
+          Sem Taxa
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:6px">
+          <span style="width:8px;height:8px;border-radius:50%;background:#3B82F6;display:inline-block"></span>
+          Seguro &amp; Rápido
+        </span>
+      </div>
+    </section>
+
+    <!-- Modalidades Section -->
+    <section style="padding:20px 16px;max-width:560px;margin:0 auto">
+      <div style="display:flex;justify-content:center;margin-bottom:12px">
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:999px;font-size:11px;font-weight:700;color:#6B7280;letter-spacing:1.2px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <span style="color:#1C68E3;display:inline-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          </span>
+          MODALIDADES
+        </span>
+      </div>
+      <h2 style="font-size:22px;font-weight:800;text-align:center;color:#111827;margin-bottom:8px;letter-spacing:-0.4px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Escolha sua opção de empréstimo</h2>
+      <p style="text-align:center;color:#6B7280;font-size:14px;margin-bottom:22px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Soluções personalizadas para cada situação financeira</p>
+
+      <div style="display:grid;gap:14px">
+
+        <!-- Card 1: Para Negativados (MAIS PROCURADO) -->
+        <div style="background:#FFFFFF;border:2px solid #1C68E3;border-radius:18px;padding:18px 16px 16px;position:relative;box-shadow:0 12px 32px -16px rgba(28,104,227,0.45);text-align:center;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#1C68E3;color:#fff;padding:4px 12px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:0.6px;box-shadow:0 8px 24px rgba(28,104,227,0.28);white-space:nowrap">MAIS PROCURADO</div>
+          <div style="width:44px;height:44px;border-radius:12px;background:#EFF6FF;color:#1C68E3;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;margin-top:4px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="17" x2="22" y1="8" y2="13"></line><line x1="22" x2="17" y1="8" y2="13"></line></svg>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#111827;margin-bottom:4px;letter-spacing:-0.2px">Para Negativados</h3>
+          <p style="font-size:13px;color:#6B7280;margin-bottom:10px">CPF com restrições no Serasa/SPC</p>
+          <div style="display:inline-block;background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:12px">1ª parcela em 90 dias</div>
+          <p style="font-size:11px;color:#6B7280;margin-bottom:0">De R$&nbsp;2.300,00 até</p>
+          <p style="font-size:24px;font-weight:800;color:#1C68E3;margin-bottom:14px;letter-spacing:-0.5px;font-variant-numeric:tabular-nums">R$&nbsp;18.000,00</p>
+          <button type="button" style="width:100%;padding:13px 16px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(28,104,227,0.28);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:48px;opacity:1;display:inline-flex;align-items:center;justify-content:center;gap:6px">
+            Simular Grátis
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+        <!-- Card 2: Pessoa Física -->
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:18px;padding:18px 16px 16px;position:relative;box-shadow:0 1px 2px rgba(17,24,39,0.04),0 4px 12px rgba(17,24,39,0.04);text-align:center;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <div style="width:44px;height:44px;border-radius:12px;background:#EFF6FF;color:#1C68E3;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;margin-top:0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#111827;margin-bottom:4px;letter-spacing:-0.2px">Pessoa Física</h3>
+          <p style="font-size:13px;color:#6B7280;margin-bottom:10px">CPF sem restrições, tire planos do papel</p>
+          <div style="display:inline-block;background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:12px">1ª parcela em 90 dias</div>
+          <p style="font-size:11px;color:#6B7280;margin-bottom:0">De R$&nbsp;3.000,00 até</p>
+          <p style="font-size:24px;font-weight:800;color:#1C68E3;margin-bottom:14px;letter-spacing:-0.5px;font-variant-numeric:tabular-nums">R$&nbsp;27.000,00</p>
+          <button type="button" style="width:100%;padding:13px 16px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(28,104,227,0.28);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:48px;opacity:1;display:inline-flex;align-items:center;justify-content:center;gap:6px">
+            Simular Grátis
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+        <!-- Card 3: Pessoa Jurídica -->
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:18px;padding:18px 16px 16px;position:relative;box-shadow:0 1px 2px rgba(17,24,39,0.04),0 4px 12px rgba(17,24,39,0.04);text-align:center;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <div style="width:44px;height:44px;border-radius:12px;background:#EFF6FF;color:#1C68E3;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;margin-top:0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#111827;margin-bottom:4px;letter-spacing:-0.2px">Pessoa Jurídica</h3>
+          <p style="font-size:13px;color:#6B7280;margin-bottom:10px">Capital de giro para sua empresa crescer</p>
+          <div style="display:inline-block;background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:12px">1ª parcela em 120 dias</div>
+          <p style="font-size:11px;color:#6B7280;margin-bottom:0">De R$&nbsp;5.000,00 até</p>
+          <p style="font-size:24px;font-weight:800;color:#1C68E3;margin-bottom:14px;letter-spacing:-0.5px;font-variant-numeric:tabular-nums">R$&nbsp;50.000,00</p>
+          <button type="button" style="width:100%;padding:13px 16px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(28,104,227,0.28);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:48px;opacity:1;display:inline-flex;align-items:center;justify-content:center;gap:6px">
+            Simular Grátis
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Processo Section -->
+    <section style="padding:24px 16px;max-width:560px;margin:0 auto">
+      <div style="display:flex;justify-content:center;margin-bottom:12px">
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:999px;font-size:11px;font-weight:700;color:#6B7280;letter-spacing:1.2px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <span style="color:#1C68E3;display:inline-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </span>
+          PROCESSO
+        </span>
+      </div>
+      <h2 style="font-size:22px;font-weight:800;text-align:center;color:#111827;margin-bottom:8px;letter-spacing:-0.4px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Como funciona?</h2>
+      <p style="text-align:center;color:#6B7280;font-size:14px;margin-bottom:22px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Processo 100% digital e sem burocracias</p>
+
+      <div style="display:grid;gap:12px">
+
+        <!-- Step 1 -->
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <div style="position:relative;width:44px;height:44px;border-radius:12px;background:#EFF6FF;color:#1C68E3;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+            <span style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#1C68E3;color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;border:2px solid #FFFFFF">1</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:2px">Simulação gratuita</div>
+            <div style="font-size:12px;color:#6B7280">Formulário online em 2 minutos</div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <div style="position:relative;width:44px;height:44px;border-radius:12px;background:#EFF6FF;color:#1C68E3;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            <span style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#1C68E3;color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;border:2px solid #FFFFFF">2</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:2px">Resultado imediato</div>
+            <div style="font-size:12px;color:#6B7280">Análise instantânea pela IA</div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+          <div style="position:relative;width:44px;height:44px;border-radius:12px;background:#EFF6FF;color:#1C68E3;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+            <span style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#1C68E3;color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;border:2px solid #FFFFFF">3</span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:2px">Recebimento via PIX</div>
+            <div style="font-size:12px;color:#6B7280">Dinheiro na conta em minutos</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Bottom -->
+      <div style="text-align:center;margin-top:28px">
+        <h3 style="font-size:18px;font-weight:700;color:#111827;margin-bottom:6px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;letter-spacing:-0.3px">Pronto para começar?</h3>
+        <p style="color:#6B7280;font-size:14px;margin-bottom:18px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">Descubra quanto você pode receber em menos de 2 minutos</p>
+        <div style="display:flex;justify-content:center">
+          <button type="button" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:16px 22px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(28,104,227,0.28);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;letter-spacing:-0.2px;min-height:54px;opacity:1">
+            Fazer Simulação Gratuita
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0F172A;color:#CBD5E1;text-align:center;padding:24px 16px calc(24px + env(safe-area-inset-bottom));font-size:12px;line-height:1.7;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+    © 2026 Bancred LTDA. Todos os direitos reservados.<br>
+    CNPJ 41.906.644/0001-20<br>
+    <span style="color:#64748B;font-size:11px">Empréstimos rápidos e seguros para realizar seus sonhos</span>
+  </footer>
+
+  <!-- Floating Notification -->
+  <div style="position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));left:12px;right:12px;max-width:360px;margin:0 auto;z-index:30;transition:transform 0.4s,opacity 0.4s;transform:translateY(0px);opacity:1;pointer-events:auto">
+    <div style="background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:14px;box-shadow:0 10px 30px -10px rgba(17,24,39,0.25);border:1px solid #E5E7EB;padding:14px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="width:38px;height:38px;background:#DCFCE7;color:#16A34A;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:baseline;gap:6px">
+            <span style="font-weight:700;font-size:14px;color:#111827">Tatiane P.</span>
+            <span style="font-size:12px;color:#6B7280">de Curitiba</span>
+          </div>
+          <p style="font-size:13px;color:#6B7280;margin-top:2px;margin-bottom:8px">Acabou de receber R$&nbsp;8.700,00</p>
+          <div style="background:#E5E7EB;border-radius:999px;height:4px;overflow:hidden">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  setTimeout(function() {
+    var bar = document.getElementById('progress-bar');
+    if (bar) bar.style.width = '100%';
+  }, 200);
+</script>
+</body>
+</html>
