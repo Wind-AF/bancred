@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prazo de Pagamento - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    button { font-family: inherit; }
+    .prazo-btn { width:100%;min-height:56px;padding:14px 20px;background:#FFFFFF;border:1.5px solid #E5E7EB;border-radius:12px;font-size:15px;font-weight:600;color:#374151;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:all 0.15s; }
+    .prazo-btn:hover { background:#EFF6FF;border-color:#1C68E3;color:#1C68E3; }
+    .prazo-btn .badge { font-size:11px;font-weight:700;background:#DCFCE7;color:#15803D;padding:3px 8px;border-radius:6px; }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:32px 16px;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:12px;font-weight:600;color:#6B7280;">Etapa 8 de 9</span>
+            <span style="font-size:12px;font-weight:600;color:#1C68E3;">89%</span>
+          </div>
+          <div style="background:#E5E7EB;border-radius:999px;height:6px;overflow:hidden;">
+            <div style="background:linear-gradient(90deg,#3B82F6,#1C68E3);height:6px;width:89%;border-radius:999px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.05);">
+          <div style="padding:24px 24px 0;text-align:center;">
+            <div style="width:56px;height:56px;background:#EFF6FF;border:2px solid #BFDBFE;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px auto;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div style="font-size:20px;font-weight:700;color:#0F172A;letter-spacing:-0.3px;">Em quantas parcelas?</div>
+            <p style="color:#64748B;margin-top:6px;font-size:14px;">Escolha o prazo de pagamento ideal</p>
+          </div>
+
+          <div style="padding:24px;">
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+              <button class="prazo-btn" onclick="selectPrazo(this, '12x')">
+                <span>12 parcelas</span>
+                <span class="badge">1ª em 90 dias</span>
+              </button>
+              <button class="prazo-btn" onclick="selectPrazo(this, '24x')">
+                <span>24 parcelas</span>
+                <span class="badge">Mais escolhido</span>
+              </button>
+              <button class="prazo-btn" onclick="selectPrazo(this, '36x')">
+                <span>36 parcelas</span>
+                <span class="badge">Parcela menor</span>
+              </button>
+              <button class="prazo-btn" onclick="selectPrazo(this, '48x')">
+                <span>48 parcelas</span>
+                <span style="font-size:12px;color:#9CA3AF;">4 anos</span>
+              </button>
+              <button class="prazo-btn" onclick="selectPrazo(this, '60x')">
+                <span>60 parcelas</span>
+                <span style="font-size:12px;color:#9CA3AF;">5 anos</span>
+              </button>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"></path></svg>
+              <p style="font-size:12px;color:#64748B;">Sem multa por pagamento antecipado</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  function selectPrazo(btn, prazo) {
+    sessionStorage.setItem('prazo', prazo);
+    window.location.href = 'analise.html';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxa de Cadastro - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    button { font-family: inherit; }
+    button:hover { filter: brightness(0.93); }
+    @keyframes fadeUp { from { opacity:0;transform:translateY(12px); } to { opacity:1;transform:translateY(0); } }
+    .fade { animation: fadeUp 0.4s ease both; }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:32px 16px 48px;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <!-- Alert banner -->
+        <div class="fade" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;margin-bottom:20px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:2px;">Último passo antes da liberação</div>
+            <p style="font-size:13px;color:#B45309;line-height:1.5;">Para finalizar a liberação do seu crédito, é necessário efetuar a taxa de cadastro e seguro do contrato.</p>
+          </div>
+        </div>
+
+        <!-- Main card -->
+        <div class="fade" style="background:#FFFFFF;border:2px solid #1C68E3;border-radius:16px;box-shadow:0 12px 40px -16px rgba(28,104,227,0.3);overflow:hidden;margin-bottom:16px;animation-delay:0.1s;">
+
+          <!-- Header -->
+          <div style="background:linear-gradient(135deg,#1C68E3,#3B82F6);padding:20px 24px;text-align:center;">
+            <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:4px;">Valor do seu empréstimo</div>
+            <div id="val-aprovado" style="font-size:36px;font-weight:800;color:#FFFFFF;letter-spacing:-1px;font-variant-numeric:tabular-nums;">R$ 5.000</div>
+          </div>
+
+          <div style="padding:24px;">
+            <!-- Fee explanation -->
+            <div style="margin-bottom:20px;">
+              <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:12px;">Taxa de cadastro e seguro</div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#F9FAFB;border-radius:10px;">
+                  <span style="font-size:13px;color:#6B7280;">Taxa de cadastro</span>
+                  <span style="font-size:14px;font-weight:700;color:#111827;">R$ 97,00</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#F9FAFB;border-radius:10px;">
+                  <span style="font-size:13px;color:#6B7280;">Seguro do contrato</span>
+                  <span style="font-size:14px;font-weight:700;color:#111827;">R$ 42,90</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;">
+                  <span style="font-size:14px;font-weight:700;color:#1C68E3;">Total a pagar</span>
+                  <span style="font-size:18px;font-weight:800;color:#1C68E3;">R$ 139,90</span>
+                </div>
+              </div>
+
+              <div style="background:#DCFCE7;border-radius:10px;padding:12px 14px;margin-bottom:16px;">
+                <div style="display:flex;gap:8px;align-items:flex-start;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>
+                  <p style="font-size:13px;color:#15803D;line-height:1.5;font-weight:500;">Esta taxa é descontada do valor total e garante a liberação imediata do seu crédito via PIX.</p>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="window.location.href='pix.html'" style="width:100%;min-height:54px;padding:14px 16px;background:linear-gradient(135deg,#16A34A,#15803D);color:#FFFFFF;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px rgba(22,163,74,0.35);margin-bottom:12px;">
+              Pagar R$ 139,90 via PIX
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg>
+                <p style="font-size:12px;color:#64748B;">Pagamento 100% seguro via PIX</p>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg>
+                <p style="font-size:12px;color:#64748B;">Crédito liberado em até 2 horas após confirmação</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="fade" style="animation-delay:0.2s;">
+          <div style="font-size:14px;font-weight:700;color:#374151;margin-bottom:10px;">Perguntas frequentes</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:14px 16px;">
+              <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:4px;">Por que devo pagar antes de receber?</div>
+              <p style="font-size:12px;color:#6B7280;line-height:1.5;">A taxa de cadastro cobre os custos operacionais de análise e abertura de contrato, conforme regulamentação do Banco Central.</p>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:14px 16px;">
+              <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:4px;">Em quanto tempo recebo após o pagamento?</div>
+              <p style="font-size:12px;color:#6B7280;line-height:1.5;">Após a confirmação do pagamento da taxa, seu crédito é liberado via PIX em até 2 horas úteis.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  var valor = sessionStorage.getItem('valor') || 'R$ 5.000';
+  document.getElementById('val-aprovado').textContent = valor;
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados Bancários - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    input, button, select { font-family: inherit; }
+    input:focus, select:focus { outline: none; box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #3B82F6; }
+    button:hover { filter: brightness(0.93); }
+    label { display:block;font-size:14px;font-weight:500;color:#374151;margin-bottom:6px; }
+    .field { margin-bottom:18px; }
+    .input-base { width:100%;height:52px;padding:0 16px;border:1px solid #D1D5DB;border-radius:12px;background:#FFFFFF;font-size:16px;font-weight:500;color:#111827;transition:border-color 0.2s; }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:32px 16px;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <div style="text-align:center;margin-bottom:24px;">
+          <div style="font-size:22px;font-weight:800;color:#0F172A;letter-spacing:-0.4px;margin-bottom:6px;">Dados para recebimento</div>
+          <p style="color:#64748B;font-size:14px;">Informe os dados da conta onde deseja receber</p>
+        </div>
+
+        <!-- Bank selected -->
+        <div id="banco-chip" style="display:flex;align-items:center;gap:10px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:12px 16px;margin-bottom:20px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <span style="font-size:14px;font-weight:700;color:#1C68E3;" id="banco-nome">Seu banco</span>
+          <a href="banco.html" style="margin-left:auto;font-size:12px;color:#6B7280;text-decoration:none;font-weight:500;">Trocar</a>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.05);padding:24px;">
+          <form onsubmit="handleSubmit(event)">
+
+            <div class="field">
+              <label for="tipo-conta">Tipo de conta</label>
+              <select id="tipo-conta" class="input-base" style="cursor:pointer;">
+                <option value="">Selecione...</option>
+                <option value="corrente">Conta Corrente</option>
+                <option value="poupanca">Conta Poupança</option>
+              </select>
+              <p id="tipo-error" style="display:none;color:#DC2626;font-size:12px;margin-top:4px;">Selecione o tipo de conta.</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
+              <div>
+                <label for="agencia">Agência</label>
+                <input type="text" id="agencia" inputmode="numeric" placeholder="0000" maxlength="6" class="input-base" oninput="this.value=this.value.replace(/\D/g,'')">
+                <p id="ag-error" style="display:none;color:#DC2626;font-size:12px;margin-top:4px;">Informe a agência.</p>
+              </div>
+              <div>
+                <label for="conta">Conta com dígito</label>
+                <input type="text" id="conta" inputmode="numeric" placeholder="00000-0" maxlength="10" class="input-base" oninput="formatConta(this)">
+                <p id="conta-error" style="display:none;color:#DC2626;font-size:12px;margin-top:4px;">Informe a conta.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="chave-pix">Chave PIX (opcional)</label>
+              <input type="text" id="chave-pix" placeholder="CPF, e-mail, telefone ou aleatória" class="input-base">
+              <p style="font-size:11px;color:#9CA3AF;margin-top:4px;">Para agilizar a transferência</p>
+            </div>
+
+            <button type="submit" style="width:100%;min-height:52px;padding:12px 16px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#FFFFFF;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px rgba(28,104,227,0.28);">
+              Continuar
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+
+            <div style="margin-top:14px;display:flex;align-items:center;gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+              <p style="font-size:12px;color:#64748B;">Dados bancários criptografados com SSL 256-bit</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  var banco = sessionStorage.getItem('banco') || 'Seu banco';
+  document.getElementById('banco-nome').textContent = banco;
+
+  function formatConta(input) {
+    var v = input.value.replace(/\D/g, '');
+    if (v.length > 6) v = v.replace(/(\d+)(\d{1})$/, '$1-$2');
+    input.value = v;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var tipo = document.getElementById('tipo-conta').value;
+    var ag = document.getElementById('agencia').value;
+    var cc = document.getElementById('conta').value;
+    var ok = true;
+    if (!tipo) { document.getElementById('tipo-error').style.display = 'block'; ok = false; }
+    else document.getElementById('tipo-error').style.display = 'none';
+    if (ag.length < 3) { document.getElementById('ag-error').style.display = 'block'; ok = false; }
+    else document.getElementById('ag-error').style.display = 'none';
+    if (cc.length < 4) { document.getElementById('conta-error').style.display = 'block'; ok = false; }
+    else document.getElementById('conta-error').style.display = 'none';
+    if (!ok) return;
+    sessionStorage.setItem('tipoConta', tipo);
+    sessionStorage.setItem('agencia', ag);
+    sessionStorage.setItem('conta', cc);
+    window.location.href = 'revisao.html';
+  }
+</script>
+</body>
+</html>

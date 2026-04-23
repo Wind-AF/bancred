@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisando seu perfil - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    .spinner { animation: spin 1s linear infinite; }
+    .check-item { display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #F3F4F6;animation:fadeIn 0.4s ease both; }
+    .check-item:last-child { border-bottom:none; }
+    .check-icon { width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;display:flex;align-items:flex-start;">
+    <section style="padding:32px 16px;width:100%;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <!-- Animated progress bar -->
+        <div style="background:#E5E7EB;border-radius:999px;height:6px;overflow:hidden;margin-bottom:32px;">
+          <div id="bar" style="background:linear-gradient(90deg,#3B82F6,#1C68E3);height:6px;width:0%;border-radius:999px;transition:width 4s ease-in-out;"></div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.05);padding:32px 24px;text-align:center;">
+
+          <!-- Spinner -->
+          <div style="width:72px;height:72px;margin:0 auto 20px;position:relative;">
+            <svg class="spinner" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="32" stroke="#E5E7EB" stroke-width="6"/>
+              <path d="M36 4a32 32 0 0 1 32 32" stroke="url(#grad)" stroke-width="6" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="grad" x1="36" y1="4" x2="68" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#1C68E3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div style="font-size:22px;font-weight:800;color:#0F172A;margin-bottom:8px;letter-spacing:-0.4px;">Analisando seu perfil</div>
+          <p style="color:#64748B;font-size:15px;margin-bottom:28px;">Nossa IA está verificando as melhores opções para você</p>
+
+          <!-- Check list -->
+          <div style="text-align:left;">
+            <div class="check-item" id="c1" style="animation-delay:0.3s;">
+              <div class="check-icon" id="i1" style="background:#E5E7EB;">
+                <div style="width:14px;height:14px;border-radius:50%;background:#9CA3AF;animation:pulse 1s infinite;"></div>
+              </div>
+              <span style="font-size:14px;font-weight:500;color:#374151;">Verificando CPF e documentação</span>
+            </div>
+            <div class="check-item" id="c2" style="animation-delay:0.8s;">
+              <div class="check-icon" id="i2" style="background:#E5E7EB;">
+                <div style="width:14px;height:14px;border-radius:50%;background:#9CA3AF;animation:pulse 1s 0.3s infinite;"></div>
+              </div>
+              <span style="font-size:14px;font-weight:500;color:#374151;">Analisando histórico financeiro</span>
+            </div>
+            <div class="check-item" id="c3" style="animation-delay:1.3s;">
+              <div class="check-icon" id="i3" style="background:#E5E7EB;">
+                <div style="width:14px;height:14px;border-radius:50%;background:#9CA3AF;animation:pulse 1s 0.6s infinite;"></div>
+              </div>
+              <span style="font-size:14px;font-weight:500;color:#374151;">Calculando proposta personalizada</span>
+            </div>
+            <div class="check-item" id="c4" style="animation-delay:1.8s;">
+              <div class="check-icon" id="i4" style="background:#E5E7EB;">
+                <div style="width:14px;height:14px;border-radius:50%;background:#9CA3AF;animation:pulse 1s 0.9s infinite;"></div>
+              </div>
+              <span style="font-size:14px;font-weight:500;color:#374151;">Verificando disponibilidade de crédito</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  var checkSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
+  function markDone(id) {
+    var el = document.getElementById('i' + id);
+    el.style.background = '#DCFCE7';
+    el.innerHTML = checkSVG;
+  }
+
+  setTimeout(function() { document.getElementById('bar').style.width = '100%'; }, 100);
+  setTimeout(function() { markDone(1); }, 1200);
+  setTimeout(function() { markDone(2); }, 2200);
+  setTimeout(function() { markDone(3); }, 3000);
+  setTimeout(function() { markDone(4); }, 3800);
+  setTimeout(function() { window.location.href = 'aprovado.html'; }, 4500);
+</script>
+</body>
+</html>

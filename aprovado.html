@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pré-aprovado! - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    button { font-family: inherit; }
+    @keyframes bounceIn { 0% { transform:scale(0.5);opacity:0; } 70% { transform:scale(1.1); } 100% { transform:scale(1);opacity:1; } }
+    @keyframes fadeUp { from { opacity:0;transform:translateY(16px); } to { opacity:1;transform:translateY(0); } }
+    .badge-anim { animation: bounceIn 0.6s ease both; }
+    .content-anim { animation: fadeUp 0.5s 0.3s ease both; opacity:0; }
+    button:hover { filter: brightness(0.93); }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:32px 16px;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <!-- Success Card -->
+        <div style="background:#FFFFFF;border:2px solid #16A34A;border-radius:16px;box-shadow:0 12px 40px -16px rgba(22,163,74,0.35);overflow:hidden;margin-bottom:16px;">
+
+          <!-- Green header -->
+          <div style="background:linear-gradient(135deg,#16A34A,#15803D);padding:28px 24px;text-align:center;">
+            <div class="badge-anim" style="width:72px;height:72px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="content-anim" style="font-size:26px;font-weight:800;color:#FFFFFF;letter-spacing:-0.6px;margin-bottom:4px;">Parabéns! Pré-aprovado!</div>
+            <p class="content-anim" style="color:rgba(255,255,255,0.85);font-size:15px;animation-delay:0.4s;">Sua análise foi concluída com sucesso</p>
+          </div>
+
+          <!-- Value section -->
+          <div class="content-anim" style="padding:28px 24px;text-align:center;animation-delay:0.5s;">
+            <div style="font-size:13px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;">Valor pré-aprovado</div>
+            <div id="valor-aprovado" style="font-size:48px;font-weight:800;color:#1C68E3;letter-spacing:-1.5px;font-variant-numeric:tabular-nums;margin-bottom:4px;">R$ 5.000</div>
+            <div style="font-size:13px;color:#16A34A;font-weight:600;">via PIX • Dinheiro na conta hoje</div>
+
+            <!-- Score display -->
+            <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;padding:16px;margin-top:20px;display:flex;justify-content:space-around;">
+              <div style="text-align:center;">
+                <div style="font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.6px;">Score Bancred</div>
+                <div style="font-size:24px;font-weight:800;color:#16A34A;margin-top:2px;">742</div>
+              </div>
+              <div style="width:1px;background:#E5E7EB;"></div>
+              <div style="text-align:center;">
+                <div style="font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.6px;">Parcela a partir de</div>
+                <div id="parcela" style="font-size:24px;font-weight:800;color:#1C68E3;margin-top:2px;">R$ 208</div>
+              </div>
+              <div style="width:1px;background:#E5E7EB;"></div>
+              <div style="text-align:center;">
+                <div style="font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.6px;">1ª parcela</div>
+                <div style="font-size:18px;font-weight:800;color:#374151;margin-top:2px;">90 dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="content-anim" style="padding:0 24px 24px;animation-delay:0.6s;">
+            <button onclick="window.location.href='banco.html'" style="width:100%;min-height:54px;padding:14px 16px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#FFFFFF;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px rgba(28,104,227,0.35);">
+              Receber meu empréstimo
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <p style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:10px;">Sem compromisso até a liberação final</p>
+          </div>
+        </div>
+
+        <!-- Info items -->
+        <div class="content-anim" style="display:grid;gap:10px;animation-delay:0.7s;">
+          <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:36px;height:36px;background:#DCFCE7;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:#111827;">Transferência via PIX</div>
+              <div style="font-size:12px;color:#6B7280;">Dinheiro na sua conta em minutos</div>
+            </div>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;">
+            <div style="width:36px;height:36px;background:#EFF6FF;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:#111827;">Processo 100% seguro</div>
+              <div style="font-size:12px;color:#6B7280;">Criptografia de ponta a ponta</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  var valor = sessionStorage.getItem('valor') || 'R$ 5.000';
+  document.getElementById('valor-aprovado').textContent = valor;
+  var num = parseInt(valor.replace(/\D/g,'')) || 5000;
+  var prazo = parseInt((sessionStorage.getItem('prazo') || '24x').replace('x','')) || 24;
+  var parcela = Math.ceil(num / prazo);
+  document.getElementById('parcela').textContent = 'R$ ' + parcela.toLocaleString('pt-BR');
+</script>
+</body>
+</html>

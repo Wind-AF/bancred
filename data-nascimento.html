@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data de Nascimento - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    input, button { font-family: inherit; }
+    input:focus { outline: none; box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #3B82F6; }
+    button:hover { filter: brightness(0.93); }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:32px 16px;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:12px;font-weight:600;color:#6B7280;">Etapa 3 de 9</span>
+            <span style="font-size:12px;font-weight:600;color:#1C68E3;">33%</span>
+          </div>
+          <div style="background:#E5E7EB;border-radius:999px;height:6px;overflow:hidden;">
+            <div style="background:linear-gradient(90deg,#3B82F6,#1C68E3);height:6px;width:33%;border-radius:999px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.05);">
+          <div style="padding:24px 24px 0;text-align:center;">
+            <div style="width:56px;height:56px;background:#EFF6FF;border:2px solid #BFDBFE;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px auto;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            </div>
+            <div style="font-size:20px;font-weight:700;color:#0F172A;letter-spacing:-0.3px;">Qual é a sua data de nascimento?</div>
+            <p style="color:#64748B;margin-top:6px;font-size:14px;">Necessário para verificar sua elegibilidade</p>
+          </div>
+
+          <div style="padding:24px;">
+            <form onsubmit="handleSubmit(event)">
+              <div style="margin-bottom:20px;">
+                <label for="data" style="display:block;font-size:14px;font-weight:500;color:#374151;margin-bottom:6px;">Data de nascimento</label>
+                <input
+                  type="text"
+                  id="data"
+                  inputmode="numeric"
+                  placeholder="DD/MM/AAAA"
+                  maxlength="10"
+                  oninput="formatData(this)"
+                  style="width:100%;height:52px;padding:0 16px;border:1px solid #D1D5DB;border-radius:12px;background:#FFFFFF;font-size:16px;font-weight:500;color:#111827;transition:border-color 0.2s;"
+                >
+                <p id="data-error" style="display:none;color:#DC2626;font-size:12px;margin-top:4px;">Por favor, informe uma data válida.</p>
+              </div>
+
+              <button type="submit" style="width:100%;min-height:52px;padding:12px 16px;background:linear-gradient(135deg,#3B82F6 0%,#1C68E3 100%);color:#FFFFFF;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px rgba(28,104,227,0.28);">
+                Continuar
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+
+              <div style="margin-top:14px;display:flex;align-items:center;gap:8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                <p style="font-size:12px;color:#64748B;">Seus dados são criptografados e protegidos</p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  function formatData(input) {
+    var v = input.value.replace(/\D/g, '');
+    if (v.length > 8) v = v.slice(0, 8);
+    if (v.length > 4) v = v.replace(/(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
+    else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,2})/, '$1/$2');
+    input.value = v;
+    document.getElementById('data-error').style.display = 'none';
+    input.style.borderColor = '#D1D5DB';
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var v = document.getElementById('data').value;
+    var parts = v.split('/');
+    if (parts.length !== 3 || parts[2].length !== 4) {
+      document.getElementById('data-error').style.display = 'block';
+      document.getElementById('data').style.borderColor = '#DC2626';
+      return;
+    }
+    var year = parseInt(parts[2]);
+    if (year < 1920 || year > 2007) {
+      document.getElementById('data-error').style.display = 'block';
+      document.getElementById('data-error').textContent = 'Você precisa ter ao menos 18 anos.';
+      document.getElementById('data').style.borderColor = '#DC2626';
+      return;
+    }
+    sessionStorage.setItem('dataNascimento', v);
+    window.location.href = 'telefone.html';
+  }
+</script>
+</body>
+</html>

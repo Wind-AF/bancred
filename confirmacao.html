@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aguardando Confirmação - Bancred</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { min-height: 100dvh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #111827; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; background: #FFFFFF; }
+    h1, h2, h3, h4, p { margin: 0; }
+    button { font-family: inherit; }
+    button:hover { filter: brightness(0.93); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { transform:scale(1);opacity:1; } 50% { transform:scale(1.05);opacity:0.8; } }
+    @keyframes fadeUp { from { opacity:0;transform:translateY(12px); } to { opacity:1;transform:translateY(0); } }
+    .spinner { animation: spin 1.2s linear infinite; }
+    .pulse-icon { animation: pulse 2s ease infinite; }
+    .fade { animation: fadeUp 0.4s ease both; }
+  </style>
+</head>
+<body>
+
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:56px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:22px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:32px 16px 48px;">
+      <div style="max-width:448px;margin:0 auto;">
+
+        <!-- Main card -->
+        <div class="fade" style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.05);padding:32px 24px;text-align:center;margin-bottom:16px;">
+
+          <!-- Spinning loader -->
+          <div class="pulse-icon" style="width:80px;height:80px;background:#EFF6FF;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="17" stroke="#E5E7EB" stroke-width="5"/>
+              <path d="M20 3a17 17 0 0 1 17 17" stroke="#1C68E3" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div style="font-size:22px;font-weight:800;color:#0F172A;margin-bottom:8px;letter-spacing:-0.4px;">Aguardando pagamento</div>
+          <p style="color:#64748B;font-size:15px;margin-bottom:24px;line-height:1.5;">Estamos monitorando em tempo real. Assim que confirmarmos seu pagamento, o crédito será liberado automaticamente.</p>
+
+          <!-- Status steps -->
+          <div style="text-align:left;background:#F9FAFB;border-radius:12px;padding:16px 20px;margin-bottom:24px;">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:28px;height:28px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span style="font-size:13px;font-weight:600;color:#374151;">Proposta aprovada</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:28px;height:28px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span style="font-size:13px;font-weight:600;color:#374151;">Dados confirmados</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:28px;height:28px;border-radius:50%;background:#FEF3C7;border:2px solid #FDE68A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                </div>
+                <span style="font-size:13px;font-weight:600;color:#92400E;">Aguardando pagamento da taxa</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:28px;height:28px;border-radius:50%;background:#E5E7EB;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <span style="font-size:11px;font-weight:700;color:#9CA3AF;">4</span>
+                </div>
+                <span style="font-size:13px;font-weight:600;color:#9CA3AF;">Liberação via PIX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Valor -->
+          <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:16px;margin-bottom:20px;">
+            <div style="font-size:12px;font-weight:600;color:#3B82F6;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px;">Valor a receber após confirmação</div>
+            <div id="val-receber" style="font-size:32px;font-weight:800;color:#1C68E3;letter-spacing:-1px;font-variant-numeric:tabular-nums;">R$ 5.000</div>
+          </div>
+
+          <a href="pix.html" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#1C68E3;text-decoration:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Ver código PIX novamente
+          </a>
+        </div>
+
+        <!-- Support info -->
+        <div class="fade" style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:14px;padding:16px 20px;animation-delay:0.15s;">
+          <div style="font-size:13px;font-weight:700;color:#374151;margin-bottom:10px;">Precisa de ajuda?</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.46 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 6.16 6.16l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span style="font-size:13px;color:#374151;font-weight:500;">Suporte: <a href="tel:+5511999999999" style="color:#1C68E3;text-decoration:none;font-weight:700;">(11) 99999-9999</a></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span style="font-size:13px;color:#374151;font-weight:500;">E-mail: <a href="mailto:suporte@bancred.com.br" style="color:#1C68E3;text-decoration:none;font-weight:700;">suporte@bancred.com.br</a></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>
+              <span style="font-size:13px;color:#374151;font-weight:500;">WhatsApp: <a href="https://wa.me/5511999999999" style="color:#16A34A;text-decoration:none;font-weight:700;">(11) 99999-9999</a></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:24px 16px;font-size:12px;line-height:1.7;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+  </footer>
+
+<script>
+  var valor = sessionStorage.getItem('valor') || 'R$ 5.000';
+  document.getElementById('val-receber').textContent = valor;
+</script>
+</body>
+</html>
